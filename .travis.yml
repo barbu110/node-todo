@@ -1,4 +1,15 @@
+dist: trusty
+sudo: required
 language: node_js
 node_js:
   - "6.1"
   - "node"
+addons:
+  apt:
+      sources:
+      - ubuntu-toolchain-r-test
+      - llvm-toolchain-precise-3.6
+      packages:
+      - gcc-5
+      - g++-5
+      - clang-3.6
