@@ -1,0 +1,35 @@
+._1oEyrEw_fP {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+._1oEyrEw_fP.kvttFwmlrb {
+  padding: 64px 16px 16px 16px;
+}
+
+@media screen and (min-width: 800px) {
+  ._1oEyrEw_fP {
+    width: 800px;
+    margin: 0 auto;
+  }
+
+  ._1oEyrEw_fP.kvttFwmlrb {
+    padding: 64px 32px 32px 32px;
+  }
+}._1Jz7Oji0yl {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 64px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  z-index: 2500;
+  top: 0;
+  left: 0;
+}html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+}

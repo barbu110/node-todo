@@ -1,0 +1,14 @@
+@import 'src/styles/config/palette';
+@import 'src/styles/config/spacing';
+
+.WhiteBar {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: $WHITEBAR_HEIGHT;
+    background-color: $fullWhite;
+    border-bottom: 1px solid $grey200;
+    z-index: 2500;
+    top: 0;
+    left: 0;
+}

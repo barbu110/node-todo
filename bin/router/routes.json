@@ -1,0 +1,8 @@
+{
+    "app": {
+        "url": "/",
+        "title": "Todo",
+        "jsModule": "app",
+        "styleModule": "app"
+    }
+}

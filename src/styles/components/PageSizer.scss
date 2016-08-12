@@ -1,0 +1,23 @@
+@import 'src/styles/config/spacing';
+
+.pageSizer {
+    display: block;
+    position: relative;
+    width: 100%;
+
+    &.hasPadding {
+        padding: $WHITEBAR_HEIGHT $MOBILE_GUTTER $MOBILE_GUTTER $MOBILE_GUTTER;
+    }
+}
+
+
+@media screen and (min-width: $MEDIA_DESKTOP) {
+    .pageSizer {
+        width: $PAGESIZE_DESKTOP;
+        margin: 0 auto;
+
+        &.hasPadding {
+            padding: $WHITEBAR_HEIGHT $DESKTOP_GUTTER $DESKTOP_GUTTER $DESKTOP_GUTTER;
+        }
+    }
+}

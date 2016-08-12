@@ -1,0 +1,10 @@
+{
+	"auth": {
+		"jwtSecret": "some_strong_password",
+		"cookieName": "session",
+		"expirationDuration": {
+			"value": 1,
+			"unit": "days"
+		}
+	}
+}
