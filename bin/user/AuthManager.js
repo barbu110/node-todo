@@ -81,8 +81,7 @@ class AuthManager {
                 Configuration.auth.expirationDuration.value,
                 Configuration.auth.expirationDuration.unit
             ).toISOString(),
-            this._request.headers['x-forwarded-for'] ||
-            this._request.connection.remoteAddress,
+            this._request.headers['x-forwarded-for'] || this._request.connection.remoteAddress,
             JSON.stringify(this._request.useragent),
         ])
             .then(() => callback(undefined, authToken))
