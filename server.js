@@ -1,7 +1,3 @@
-if (global.v8debug) {
-    global.v8debug.Debug.setBreakOnException();
-}
-
 const underscore = require('underscore');
 const path = require('path');
 const express = require('express');
@@ -10,10 +6,7 @@ const cookieParser = require('cookie-parser');
 const useragent = require('express-useragent');
 const Router = require('./bin/router');
 const ServerUtils = require('./bin/server-utils');
-const AuthManager = require('./bin/user/AuthManager');
-const Configuration = require('./config.json');
-const moment = require('moment');
-const Database = require('./bin/database');
+const ApiModuleLoader = require('./bin/http-api/Loader');
 
 Error.stackTraceLimit = Infinity;
 
@@ -30,6 +23,9 @@ app.set('view engine', 'pug');
 
 app.use('/assets', express.static('./dist/assets'));
 
+const httpApiRouter = express.Router();
+app.use('/api', httpApiRouter);
+
 underscore.each(Router.getRoutes(), (route, identity) => {
     const callbacks = [
         (req, res) => res.render('index', {
@@ -45,54 +41,8 @@ underscore.each(Router.getRoutes(), (route, identity) => {
     app[method](route.url, ...callbacks);
 });
 
-app.post('/api/login', (req, res) => {
-    const { username, password } = req.body;
-
-    const authManager = new AuthManager(req);
-    authManager.authenticate(username, password, (account, jwt) => {
-        res.cookie(Configuration.auth.cookieName, jwt);
-        res.json({
-            success: true,
-        });
-        res.end();
-    });
-});
-
-app.post('/api/logout', (req, res) => {
-    const authManager = new AuthManager(req);
-    authManager.logout(err => {
-        if (err) {
-            console.error('Failed to log out: ', err);
-        }
-
-        res.clearCookie(Configuration.auth.cookieName);
-        res.json({
-            success: err ? false : true,
-        });
-        res.end();
-    });
-});
-
-app.get('/api/secure', (req, res) => {
-    const authManager = new AuthManager(req);
-    authManager.verifyIdentity((err, account) => {
-        if (err) {
-            res.json(err);
-            res.end();
-
-            return;
-        }
-
-        if (account === null) {
-            res.sendStatus(403);
-
-            return;
-        }
-
-        res.json(account);
-        res.end();
-    });
-});
+const apiModuleLoader = new ApiModuleLoader(httpApiRouter);
+apiModuleLoader.populateRouter();
 
 app.listen(8080, () => {
     /*eslint no-console:0 */

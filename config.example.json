@@ -1,10 +1,13 @@
 {
-	"auth": {
-		"jwtSecret": "some_strong_password",
-		"cookieName": "session",
-		"expirationDuration": {
-			"value": 1,
-			"unit": "days"
-		}
-	}
+    "auth": {
+        "jwtSecret": "some_strong_password",
+        "cookieName": "session",
+        "expirationDuration": {
+            "value": 1,
+            "unit": "days"
+        }
+    },
+    "httpApi": {
+        "modulesLocation": "./bin/http-api/modules"
+    }
 }

@@ -31,7 +31,8 @@
         "svg2png": "^3.0.0",
         "underscore": "^1.8.3",
         "generic-pool": "latest",
-        "async": "latest"
+        "async": "latest",
+        "methods": "latest"
     },
     "devDependencies": {
         "autoprefixer": "latest",
@@ -68,6 +69,7 @@
         "resolve-url-loader": "^1.6.0",
         "sass-loader": "^4.0.0",
         "style-loader": "^0.13.1",
+        "supertest": "^2.0.0",
         "url-loader": "^0.5.7",
         "webpack": "^1.13.1"
     },
