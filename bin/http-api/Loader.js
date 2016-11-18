@@ -3,7 +3,6 @@ const ApiModule = require('./ApiModule');
 
 const fs = require('fs');
 const path = require('path');
-const _ = require('underscore');
 
 class Loader {
 

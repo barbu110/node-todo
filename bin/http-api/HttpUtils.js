@@ -18,6 +18,8 @@ class HttpUtils {
             if (!err && account) {
                 req.getSessionUser = () => account;
                 next();
+
+                return;
             }
 
             res.status(403);

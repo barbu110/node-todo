@@ -1,29 +1,42 @@
 const ApiModule = require('../ApiModule');
-const Configuration = require('../../../config.json');
 const AuthManager = require('../../user/AuthManager');
 
-class UserLogin extends ApiModule {
+class UserStatus extends ApiModule {
 
     constructor() {
         super();
 
-        this.setMethod('post');
-        this.setRoute('/user/login');
+        this.setMethod('get');
+        this.setRoute('/user/status');
     }
 
     execute(req, res) {
-        const { username, password } = req.body;
-
         const authManager = new AuthManager(req);
-        authManager.authenticate(username, password, (account, jwt) => {
-            res.cookie(Configuration.auth.cookieName, jwt);
-            res.json({
-                success: true,
-            });
+        authManager.verifyIdentity((err, account) => {
+            let output = {
+                isAuthenticated: false,
+            };
+
+            if (account) {
+                output = {
+                    isAuthenticated: true,
+                    account: {
+                        accountToken: account.getToken(),
+                        username: account.getUsername(),
+                        firstName: account.getFirstName(),
+                        lastName: account.getLastName(),
+                        profilePicture: account.getProfilePicture(),
+                        permissions: account.getPermissions()._permissions,
+                    },
+                };
+            }
+
+            res.json(output);
+            res.status(200);
             res.end();
         });
     }
 
 }
 
-module.exports = UserLogin;
+module.exports = UserStatus;
