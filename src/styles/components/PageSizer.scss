@@ -17,7 +17,7 @@
         margin: 0 auto;
 
         &.hasPadding {
-            padding: $WHITEBAR_HEIGHT $DESKTOP_GUTTER $DESKTOP_GUTTER $DESKTOP_GUTTER;
+            padding: $DESKTOP_GUTTER;
         }
     }
 }

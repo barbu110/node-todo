@@ -1,0 +1,16 @@
+@import 'src/styles/config/palette';
+@import 'src/styles/config/spacing';
+
+.navigationLink {
+    display: block;
+    position: relative;
+    margin-left: $MOBILE_GUTTER;
+    font-weight: 500;
+    font-size: 15px;
+    color: $grey700;
+    text-decoration: none;
+
+    &:hover {
+        color: $grey900;
+    }
+}

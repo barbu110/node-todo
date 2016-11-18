@@ -1,0 +1,7 @@
+@import 'src/styles/config/spacing';
+
+.page {
+	display: block;
+	position: relative;
+	padding-top: $WHITEBAR_HEIGHT;
+}

@@ -17,9 +17,10 @@ export default class PageSizer extends React.Component {
     render() {
         const { hasPadding, children } = this.props;
         const styleNames = classnames({
-            'pageSizer': true,
+            pageSizer: true,
             hasPadding,
         });
+
         return (
             <div styleName={styleNames}>{children}</div>
         );

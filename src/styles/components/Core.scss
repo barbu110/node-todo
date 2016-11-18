@@ -1,7 +1,12 @@
 @import 'src/styles/config/palette';
+@import 'src/styles/config/font';
 
 html, body {
 	margin: 0;
 	padding: 0;
-	background-color: $grey50;
+	background-color: $grey100;
+}
+
+* {
+	font-family: Roboto, sans-serif;
 }
