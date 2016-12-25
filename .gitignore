@@ -1,5 +1,9 @@
-test/playground
+playground
 log
 node_modules
 .idea
 config.json
+dist
+user-data
+*.sublime*
+npm-debug.log

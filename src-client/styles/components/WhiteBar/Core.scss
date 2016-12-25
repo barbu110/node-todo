@@ -1,0 +1,49 @@
+@import 'src-client/styles/config/palette';
+@import 'src-client/styles/config/spacing';
+@import 'src-client/styles/config/zShadow';
+
+.WhiteBar {
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: $WHITEBAR_HEIGHT;
+    background-color: $fullWhite;
+    border-bottom: 1px solid $grey300;
+    z-index: 2500;
+    top: 0;
+    left: 0;
+    overflow-x: auto;
+
+    .presenter {
+        display: flex;
+        position: relative;
+        flex: 1;
+        height: $WHITEBAR_HEIGHT;
+        line-height: $WHITEBAR_HEIGHT;
+        padding: 0 $MOBILE_GUTTER;
+    }
+    .pushLeft {
+        @extend .presenter;
+        padding: 0;
+    }
+    .pushRight {
+        @extend .presenter;
+        justify-content: flex-end;
+        padding: 0;
+    }
+    .pushLeft, .pushRight {
+        &.fit {
+            flex: 0;
+        }
+    }
+
+    * {
+        flex-shrink: 0;
+    }
+}
+
+@media screen and (min-width: $MEDIA_DESKTOP) {
+    .WhiteBar .presenter {
+        padding: 0;
+    }
+}

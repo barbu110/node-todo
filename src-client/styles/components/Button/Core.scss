@@ -1,0 +1,30 @@
+@import 'src-client/styles/config/palette';
+@import 'src-client/styles/config/spacing';
+@import 'src-client/styles/config/zShadow';
+@import 'src-client/styles/config/curves';
+
+.Button {
+    display: inline-block;
+    position: relative;
+    user-select: none;
+    height: $BUTTON_HEIGHT;
+    padding: 0 $BUTTON_PADDING;
+    cursor: pointer;
+    border-radius: $BUTTON_BORDER_RADIUS;
+    border: 1px solid $grey400;
+    font-size: $BUTTON_FONT_SIZE;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: $BUTTON_HEIGHT;
+    color: $grey700;
+    transition: background-color $easeInOut 300ms, opacity $easeInOut 200ms;
+
+    &:active {
+        background-color: $blue100;
+    }
+    &:disabled, &.disabled {
+        opacity: 0.3;
+        pointer-events: none;
+        cursor: default;
+    }
+}

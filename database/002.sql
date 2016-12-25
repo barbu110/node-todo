@@ -1,1 +1,1 @@
-ALTER TABLE todoapp.public.user ALTER COLUMN profile_pic DROP NOT NULL;
+ALTER TABLE "user" ALTER COLUMN profile_pic DROP NOT NULL;

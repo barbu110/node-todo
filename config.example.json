@@ -1,3 +1,8 @@
+/**
+ * @providesModule Configuration
+ * @ignoreModule
+ */
+
 {
     "auth": {
         "jwtSecret": "some_strong_password",
@@ -8,6 +13,23 @@
         }
     },
     "httpApi": {
-        "modulesLocation": "./bin/http-api/modules"
+        "modulesLocation": "./src-server/http-api/modules"
+    },
+    "userData": {
+        "mediaDir": "./user-data/media"
+    },
+    "database": {
+        "work": {
+            "user": "your_user",
+            "password": "your_strong_password",
+            "database": "todoapp",
+            "port": 5432
+        },
+        "test": {
+            "user": "your_test_user",
+            "password": "another_strong_password",
+            "database": "todoapp-test",
+            "port": 5432
+        }
     }
 }

@@ -1,0 +1,24 @@
+@import 'src-client/styles/config/spacing';
+
+.pageSizer {
+    display: block;
+    position: relative;
+    width: 100vw;
+    box-sizing: border-box;
+
+    &.hasPadding {
+        padding: $MOBILE_GUTTER;
+    }
+}
+
+
+@media screen and (min-width: $MEDIA_DESKTOP) {
+    .pageSizer {
+        width: $PAGESIZE_DESKTOP;
+        margin: 0 auto;
+
+        &.hasPadding {
+            padding: $DESKTOP_GUTTER 0 0 0;
+        }
+    }
+}

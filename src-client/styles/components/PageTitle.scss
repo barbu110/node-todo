@@ -1,0 +1,21 @@
+@import 'src-client/styles/config/spacing';
+@import 'src-client/styles/config/curves';
+@import 'src-client/styles/config/palette';
+
+.PageTitle {
+    display: block;
+    position: relative;
+    user-select: none;
+    cursor: default;
+    font-size: 36px;
+    font-weight: 300;
+    margin: 0 0 $MOBILE_GUTTER 0;
+    color: $grey800;
+    transition: all $easeOut 250ms;
+}
+
+@media screen and (min-width: $MEDIA_DESKTOP) {
+    .PageTitle {
+        margin-bottom: $DESKTOP_GUTTER;
+    }
+}

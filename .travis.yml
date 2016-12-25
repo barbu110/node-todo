@@ -13,3 +13,5 @@ addons:
       - gcc-5
       - g++-5
       - clang-3.6
+before_script:
+  - psql -c 'create database todoapp-travis;' -u postgres

@@ -11,8 +11,9 @@ function buildConfig(wantedEnv) {
     const isValid = wantedEnv && wantedEnv.length > 0 && allowedEnvs.indexOf(wantedEnv) !== -1;
     const validEnv = isValid ? wantedEnv : 'dev';
 
-    return require(path.join(__dirname, 'build', 'conf', validEnv));
+    return require(path.join(__dirname, 'build-config', validEnv));
 }
 
 console.log('Building scripts for environment: ' + env);
+
 module.exports = buildConfig(env);

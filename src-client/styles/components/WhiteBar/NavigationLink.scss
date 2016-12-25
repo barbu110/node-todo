@@ -1,0 +1,20 @@
+@import 'src-client/styles/config/palette';
+@import 'src-client/styles/config/spacing';
+
+.navigationLink {
+    display: block;
+    position: relative;
+    margin-left: $MOBILE_GUTTER;
+    font-weight: 500;
+    font-size: 15px;
+    color: $grey700;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    min-width: auto;
+    width: auto;
+
+    &:hover {
+        color: $grey900;
+    }
+}
