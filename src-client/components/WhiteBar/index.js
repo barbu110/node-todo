@@ -1,1 +1,5 @@
-export default from './WhiteBar';
+/**
+ * @providesModule WhiteBar
+ */
+
+export default from 'WhiteBar/Core';

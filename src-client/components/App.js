@@ -1,14 +1,18 @@
-import React from 'react';
-import WhiteBar from 'components/WhiteBar';
-import Page from 'components/Page';
+/**
+ * @providesModule App
+ */
 
-import * as SessionStateActions from 'actions/SessionStateActions';
+import React from 'react';
+import WhiteBar from 'WhiteBar';
+import Page from 'Page';
+
+import * as SessionStateActions from 'SessionStateActions';
 
 import 'styles/components/Core';
 
 export default class App extends React.Component {
-    static propTypes = {
-        children: React.PropTypes.any.isRequired,
+    props: {
+        children: mixed,
     };
 
     componentWillMount() {

@@ -1,6 +1,6 @@
 /**
+ * @providesModule PageTitle
  * @flow
- * @providesModule ui-PageTitle
  */
 
 import React from 'react';

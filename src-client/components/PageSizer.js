@@ -1,13 +1,18 @@
+/**
+ * @providesModule PageSizer
+ * @flow
+ */
+
 import React from 'react';
 import CSSModules from 'react-css-modules';
 
-import classnames from 'classnames';
+import cx from 'cx';
 import styles from 'styles/components/PageSizer';
 
 @CSSModules(styles, { allowMultiple: true })
 export default class PageSizer extends React.Component {
-    static propTypes = {
-        hasPadding: React.PropTypes.bool,
+    props: {
+        hasPadding: boolean,
     };
 
     static defaultProps = {
@@ -16,7 +21,7 @@ export default class PageSizer extends React.Component {
 
     render() {
         const { hasPadding, children } = this.props;
-        const styleNames = classnames({
+        const styleNames = cx({
             pageSizer: true,
             hasPadding,
         });

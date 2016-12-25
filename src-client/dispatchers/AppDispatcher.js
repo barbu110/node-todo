@@ -1,3 +1,7 @@
+/**
+ * @providesModule AppDispatcher
+ */
+
 import Dispatcher from 'flux/lib/Dispatcher';
 
 const AppDispatcher = new Dispatcher();

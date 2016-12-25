@@ -1,7 +1,12 @@
+/**
+ * @providesModule UITest
+ * @flow
+ */
+
 import React from 'react';
-import PageSizer from 'components/PageSizer';
+import PageSizer from 'PageSizer';
 import Button from 'Button';
-import PageTitle from 'components/PageTitle';
+import PageTitle from 'PageTitle';
 
 export default class UITest extends React.Component {
     state = {
@@ -18,7 +23,7 @@ export default class UITest extends React.Component {
 
         return (
             <PageSizer hasPadding={true}>
-                <PageTitle>User Interface Playground</PageTitle>
+                <PageTitle>User Interface New Playground</PageTitle>
                 <p style={paragraphStyles}>
                     This is a UI Framework testing page.
                 </p>

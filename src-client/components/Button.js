@@ -1,13 +1,13 @@
 /**
- * @flow
  * @providesModule Button
+ * @flow
  */
 
 import React from 'react';
 import CSSModules from 'react-css-modules';
 
-import cx from 'src-server/utils/cx';
-import condObj from 'src-server/utils/condObj';
+import cx from 'cx';
+import condObj from 'condObj';
 import styles from 'styles/components/Button/Core';
 
 @CSSModules(styles, { allowMultiple: true })

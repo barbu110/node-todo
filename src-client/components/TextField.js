@@ -1,6 +1,6 @@
 /**
+ * @providesModule TextField
  * @flow
- * @providesModule ui-TextField
  */
 
 import React from 'react';

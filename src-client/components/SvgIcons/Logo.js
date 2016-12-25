@@ -1,11 +1,16 @@
+/**
+ * @providesModule SvgIcons/Logo
+ * @flow
+ */
+
 import React from 'react';
 import pure from 'recompose/pure';
 
 @pure
 export default class Logo extends React.Component {
-    static propTypes = {
-        hasText: React.PropTypes.bool,
-        color: React.PropTypes.string,
+    props: {
+        hasText: boolean,
+        color: string,
     };
 
     static defaultProps = {

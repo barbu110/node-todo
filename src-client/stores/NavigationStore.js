@@ -1,7 +1,12 @@
+/**
+ * @providesModule NavigationStore
+ * @flow
+ */
+
 import EventEmitter from 'events';
-import AppDispatcher from 'dispatchers/AppDispatcher';
-import ActionNames from 'actions/ActionNames';
-import SessionStateStore from 'stores/SessionStateStore';
+import AppDispatcher from 'AppDispatcher';
+import ActionNames from 'ActionNames';
+import SessionStateStore from 'SessionStateStore';
 
 const CHANGE_EVENT = 'change';
 
@@ -13,11 +18,11 @@ class NavigationStore extends EventEmitter {
         this.emit(CHANGE_EVENT);
     }
 
-    addChangeListener(callback) {
+    addChangeListener(callback: Function) {
         this.on(CHANGE_EVENT, callback);
     }
 
-    removeChangeListener(callback) {
+    removeChangeListener(callback: Function) {
         this.removeListener(CHANGE_EVENT, callback);
     }
 
@@ -31,7 +36,7 @@ class NavigationStore extends EventEmitter {
 }
 
 const navigationStore = new NavigationStore();
-navigationStore.dispatchToken = AppDispatcher.register(action => {
+navigationStore.dispatchToken = AppDispatcher.register((action: Object) => {
     AppDispatcher.waitFor([ SessionStateStore.dispatchToken ]);
 
     switch (action.actionType) {

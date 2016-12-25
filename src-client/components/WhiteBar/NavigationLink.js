@@ -1,3 +1,8 @@
+/**
+ * @providesModule WhiteBar/NavigationLink
+ * @flow
+ */
+
 import React from 'react';
 import Link from 'react-router/lib/Link';
 import CSSModules from 'react-css-modules';
@@ -6,10 +11,10 @@ import styles from 'styles/components/WhiteBar/NavigationLink';
 
 @CSSModules(styles)
 export default class NavigationLink extends React.Component {
-    static propTypes = {
-        label: React.PropTypes.string.isRequired,
-        link: React.PropTypes.string.isRequired,
-        internalLink: React.PropTypes.bool,
+    props: {
+        label: string,
+        link: string,
+        internalLink: boolean,
     };
 
     static defaultProps = {

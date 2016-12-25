@@ -1,8 +1,11 @@
-// @flow
+/**
+ * @providesModule NavigationActions
+ * @flow
+ */
 
 import request from 'superagent/lib/client';
-import AppDispatcher from 'dispatchers/AppDispatcher';
-import ActionNames from 'actions/ActionNames';
+import AppDispatcher from 'AppDispatcher';
+import ActionNames from 'ActionNames';
 
 export function getNavigationLinks() {
     AppDispatcher.dispatch({

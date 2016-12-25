@@ -1,3 +1,8 @@
+/**
+ * @providesModule SessionStateStore
+ * @flow
+ */
+
 import EventEmitter from 'events';
 import AppDispatcher from 'dispatchers/AppDispatcher';
 import ActionNames from 'actions/ActionNames';
@@ -13,11 +18,11 @@ class SessionStateStore extends EventEmitter {
         this.emit(CHANGE_EVENT);
     }
 
-    addChangeListener(callback) {
+    addChangeListener(callback: Function) {
         this.on(CHANGE_EVENT, callback);
     }
 
-    removeChangeListener(callback) {
+    removeChangeListener(callback: Function) {
         this.removeListener(CHANGE_EVENT, callback);
     }
 
@@ -34,7 +39,7 @@ class SessionStateStore extends EventEmitter {
 }
 
 const sessionStateStore = new SessionStateStore();
-sessionStateStore.dispatchToken = AppDispatcher.register(action => {
+sessionStateStore.dispatchToken = AppDispatcher.register((action: Object) => {
     switch (action.actionType) {
     case ActionNames.FETCH_SESSION_STATE:
         break;

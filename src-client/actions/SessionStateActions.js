@@ -1,7 +1,12 @@
+/**
+ * @providesModule SessionStateActions
+ * @flow
+ */
+
 import request from 'superagent/lib/client';
-import AppDispatcher from 'dispatchers/AppDispatcher';
-import ActionNames from 'actions/ActionNames';
-import Account from 'src-server/user/Account';
+import AppDispatcher from 'AppDispatcher';
+import ActionNames from 'ActionNames';
+import Account from 'Account';
 
 export function getSessionState() {
     AppDispatcher.dispatch({
@@ -9,7 +14,7 @@ export function getSessionState() {
     });
 
     request('GET', '/api/user/status')
-        .then(data => {
+        .then((data: Object) => {
             const responseData = data.body;
             const isAuthenticated = responseData.isAuthenticated || false;
             const accountData = responseData.account;

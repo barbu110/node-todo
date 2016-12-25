@@ -8,6 +8,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const defaultPort = 8080;
 const srcPath = entryPoint.srcPath;
 
+console.log(path.resolve(__dirname, '../dist/assets'));
+
 module.exports = {
     entry: entryPoint.buildEntryPointsList(),
     port: defaultPort,
@@ -16,7 +18,6 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, '../dist/assets'),
         filename: '[name].js',
-        publicPath: '/assets/',
     },
     resolve: {
         extensions: [ '', '.js', '.jsx', '.scss' ],
@@ -58,7 +59,6 @@ module.exports = {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 loader: 'babel',
-                cacheDirectory: true,
             },
         ],
     },

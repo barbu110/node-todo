@@ -13,6 +13,7 @@ const webpackVersion = require('webpack');
 const serverRoot = path.resolve(path.join(__dirname, 'src-server'));
 const serverBuild = path.resolve(path.join(__dirname, 'dist', 'server'));
 const clientRoot = path.resolve(path.join(__dirname, 'src-client'));
+const clientBuild = path.resolve(path.join(__dirname, 'dist', 'assets'));
 
 gulp.task('server:build', (done) => {
     hasteMapper.scanModules({
@@ -54,7 +55,8 @@ gulp.task('client:build', (done) => {
 
         gulp
             .src(webpackFirstEntry)
-            .pipe(webpack(webpackConfig, webpackVersion));
-        done();
+            .pipe(webpack(webpackConfig, webpackVersion))
+            .pipe(gulp.dest(clientBuild))
+            .on('end', done);
     });
 });
