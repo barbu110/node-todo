@@ -7,3 +7,4 @@ dist
 user-data
 *.sublime*
 npm-debug.log
+dist
